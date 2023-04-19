@@ -90,11 +90,11 @@ class Lab1b_3(gr.top_block, Qt.QWidget):
         self.top_layout.addWidget(self._freq_win)
         self.rational_resampler_xxx_0_1 = filter.rational_resampler_fff(
                 interpolation=1,
-                decimation=4,
+                decimation=8,
                 taps=[],
                 fractional_bw=0)
         self.rational_resampler_xxx_0_0 = filter.rational_resampler_fff(
-                interpolation=4,
+                interpolation=2,
                 decimation=1,
                 taps=[],
                 fractional_bw=0)

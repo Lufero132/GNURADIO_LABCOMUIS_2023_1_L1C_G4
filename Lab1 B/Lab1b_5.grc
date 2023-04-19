@@ -168,7 +168,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [704, 236.0]
+    coordinate: [688, 236.0]
     rotation: 0
     state: enabled
 - name: blocks_wavfile_source_0
@@ -210,7 +210,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [376, 532.0]
+    coordinate: [64, 620.0]
     rotation: 0
     state: disabled
 - name: low_pass_filter_0
@@ -234,7 +234,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1008, 532.0]
+    coordinate: [1080, 564.0]
     rotation: 0
     state: disabled
 - name: qtgui_freq_sink_x_0

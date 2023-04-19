@@ -79,6 +79,8 @@ class Lab1b_4(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 200000
+        self.inte = inte = 1
+        self.dec = dec = 1
         self.conts = conts = 1
         self.audio_rate = audio_rate = 44100
 
@@ -89,12 +91,18 @@ class Lab1b_4(gr.top_block, Qt.QWidget):
         self._samp_rate_range = Range(1000, 300000, 1000, 200000, 200)
         self._samp_rate_win = RangeWidget(self._samp_rate_range, self.set_samp_rate, "Frecuencia de muestreo", "counter_slider", float, QtCore.Qt.Horizontal)
         self.top_layout.addWidget(self._samp_rate_win)
-        self._conts_range = Range(0, 2, 0.5, 1, 200)
+        self._inte_range = Range(0, 10, 1, 1, 200)
+        self._inte_win = RangeWidget(self._inte_range, self.set_inte, "Interpolation", "counter_slider", float, QtCore.Qt.Horizontal)
+        self.top_layout.addWidget(self._inte_win)
+        self._dec_range = Range(0, 10, 1, 1, 200)
+        self._dec_win = RangeWidget(self._dec_range, self.set_dec, "Decimation", "counter_slider", float, QtCore.Qt.Horizontal)
+        self.top_layout.addWidget(self._dec_win)
+        self._conts_range = Range(0, 2, 0.1, 1, 200)
         self._conts_win = RangeWidget(self._conts_range, self.set_conts, "Constante", "counter_slider", float, QtCore.Qt.Horizontal)
         self.top_layout.addWidget(self._conts_win)
         self.rational_resampler_xxx_0 = filter.rational_resampler_fff(
-                interpolation=1,
-                decimation=1,
+                interpolation=inte,
+                decimation=dec,
                 taps=[],
                 fractional_bw=0)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_f(
@@ -221,6 +229,18 @@ class Lab1b_4(gr.top_block, Qt.QWidget):
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
         self.qtgui_freq_sink_x_0.set_frequency_range(0, self.samp_rate)
         self.qtgui_time_sink_x_0.set_samp_rate(self.samp_rate)
+
+    def get_inte(self):
+        return self.inte
+
+    def set_inte(self, inte):
+        self.inte = inte
+
+    def get_dec(self):
+        return self.dec
+
+    def set_dec(self, dec):
+        self.dec = dec
 
     def get_conts(self):
         return self.conts

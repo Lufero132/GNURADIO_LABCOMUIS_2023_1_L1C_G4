@@ -55,7 +55,7 @@ blocks:
     orient: QtCore.Qt.Horizontal
     rangeType: float
     start: '0'
-    step: '0.5'
+    step: '0.1'
     stop: '2'
     value: '1'
     widget: counter_slider
@@ -64,6 +64,48 @@ blocks:
     bus_source: false
     bus_structure: null
     coordinate: [520, 20.0]
+    rotation: 0
+    state: true
+- name: dec
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Decimation
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '10'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [832, 4.0]
+    rotation: 0
+    state: true
+- name: inte
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Interpolation
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '1'
+    stop: '10'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [640, 12.0]
     rotation: 0
     state: true
 - name: samp_rate
@@ -343,9 +385,9 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    decim: '1'
+    decim: dec
     fbw: '0'
-    interp: '1'
+    interp: inte
     maxoutbuf: '0'
     minoutbuf: '0'
     taps: '[]'
