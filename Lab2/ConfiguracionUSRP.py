@@ -76,7 +76,7 @@ class ConfiguracionUSRP(gr.top_block, Qt.QWidget):
         # Variables
         ##################################################
         self.samp_rate = samp_rate = 200000
-        self.fc = fc = 80000000
+        self.fc = fc = 50000000
         self.GTX = GTX = 0
         self.A = A = 1
 
@@ -84,7 +84,7 @@ class ConfiguracionUSRP(gr.top_block, Qt.QWidget):
         # Blocks
         ##################################################
 
-        self._fc_range = Range(80000000, 2200000000, 1000000, 80000000, 200)
+        self._fc_range = Range(50000000, 2200000000, 1000000, 50000000, 200)
         self._fc_win = RangeWidget(self._fc_range, self.set_fc, "Frecuencia Portadora", "counter_slider", float, QtCore.Qt.Horizontal)
         self.top_layout.addWidget(self._fc_win)
         self._GTX_range = Range(0, 30, 1, 0, 200)
